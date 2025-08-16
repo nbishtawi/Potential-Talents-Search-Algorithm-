@@ -1,11 +1,53 @@
-# Potential-Talents-Search-Algorithm
- Potential Talents
-Background:
+# Talent Search Algorithm with NLP  
 
-As a talent sourcing and management company, we are interested in finding talented individuals for sourcing these candidates to technology companies. Finding talented candidates is not easy, for several reasons. The first reason is one needs to understand what the role is very well to fill in that spot, this requires understanding the client’s needs and what they are looking for in a potential candidate. The second reason is one needs to understand what makes a candidate shine for the role we are in search for. Third, where to find talented individuals is another challenge.
+## Overview  
+**Talent Search Algorithm** is a natural language processing (NLP) project designed to identify and rank potential candidates based on job titles and keywords. The project applies text similarity methods (TF-IDF, cosine similarity, and word embeddings) to match candidates with relevant opportunities.  
 
-The nature of our job requires a lot of human labor and is full of manual operations. Towards automating this process we want to build a better approach that could save us time and finally help us spot potential candidates that could fit the roles we are in search for. Moreover, going beyond that for a specific role we want to fill in we are interested in developing a machine learning powered pipeline that could spot talented individuals, and rank them based on their fitness.
+Note: The candidate dataset and GloVe embeddings are **not included** in this repository due to size and licensing restrictions.  
+ 
+---
 
-We are right now semi-automatically sourcing a few candidates, therefore the sourcing part is not a concern at this time but we expect to first determine best matching candidates based on how fit these candidates are for a given role. We generally make these searches based on some keywords such as “full-stack software engineer”, “engineering manager” or “aspiring human resources” based on the role we are trying to fill in. These keywords might change, and you can expect that specific keywords will be provided to you.
+## Goals  
+- Develop an algorithm to match **job candidates** to target keywords.  
+- Use **NLP methods** (tokenization, embeddings, similarity measures) to capture semantic meaning.  
+- Provide a scalable framework for **talent identification** in recruitment.  
 
-Assuming that we were able to list and rank fitting candidates, we then employ a review procedure, as each candidate needs to be reviewed and then determined how good a fit they are through manual inspection. This procedure is done manually and at the end of this manual review, we might choose not the first fitting candidate in the list but maybe the 7th candidate in the list. If that happens, we are interested in being able to re-rank the previous list based on this information. This supervisory signal is going to be supplied by starring the 7th candidate in the list. Starring one candidate actually sets this candidate as an ideal candidate for the given role. Then, we expect the list to be re-ranked each time a candidate is starred.
+---
+
+## Features  
+- **Data Preprocessing:** Tokenization of job titles with NLTK.  
+- **Similarity Metrics:**  
+  - TF-IDF with cosine similarity.  
+  - Word embeddings (GloVe 300d) with semantic averaging.  
+- **Custom Talent Search:** Match candidate job titles against specified keywords.  
+- **Reproducibility:** End-to-end workflow in Jupyter notebooks.  
+
+---
+
+## Methodology  
+1. **Data Loading** – Candidate job titles loaded from CSV.  
+2. **Keyword Processing** – Input keywords tokenized with NLTK.  
+3. **Text Representations** –  
+   - TF-IDF vectors built from job titles.  
+   - Embedding averages created using GloVe 300d vectors.  
+4. **Similarity Calculation** –  
+   - Cosine similarity for TF-IDF vectors.  
+   - Embedding-based distance metrics for semantic closeness.  
+5. **Ranking** – Candidates ranked by similarity to target keywords.  
+
+---
+
+## Results  
+- Algorithm successfully matched candidates to relevant roles based on both lexical and semantic similarity.  
+- Embedding-based approaches captured context better than TF-IDF alone.  
+- Results demonstrate potential for **recruitment automation and candidate search**.  
+
+---
+
+## Tools & Technologies  
+- **Python**  
+- **Pandas, NumPy** – data processing  
+- **NLTK** – tokenization and text processing  
+- **Scikit-learn** – TF-IDF and similarity metrics  
+- **GloVe embeddings** – semantic similarity representation  
+
