@@ -27,10 +27,10 @@ Note: The candidate dataset and GloVe embeddings are **not included** in this re
 ## Methodology  
 1. **Data Loading** – Candidate job titles loaded from CSV.  
 2. **Keyword Processing** – Input keywords tokenized with NLTK.  
-3. **Text Representations** –  
+3. **Text Representations** 
    - TF-IDF vectors built from job titles.  
    - Embedding averages created using GloVe 300d vectors.  
-4. **Similarity Calculation** –  
+4. **Similarity Calculation** 
    - Cosine similarity for TF-IDF vectors.  
    - Embedding-based distance metrics for semantic closeness.  
 5. **Ranking** – Candidates ranked by similarity to target keywords.  
